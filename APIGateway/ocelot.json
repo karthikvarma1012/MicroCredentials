@@ -1,0 +1,52 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Customer/{id}",
+      "DownstreamScheme": "https",
+      "ServiceName": "MicroServices",
+      "UpstreamPathTemplate": "/Customer/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Customer",
+      "DownstreamScheme": "https",
+      "ServiceName": "MicroServices",
+      "UpstreamPathTemplate": "/Customer",
+      "UpstreamHttpMethod": [ "PUT", "POST" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/quote/{id}",
+      "DownstreamScheme": "https",
+      "ServiceName": "MicroServices",
+      "UpstreamPathTemplate": "/quote/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/quote/{id}",
+      "DownstreamScheme": "https",
+      "ServiceName": "MicroServices",
+      "UpstreamPathTemplate": "/quote/{id}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/quote/",
+      "DownstreamScheme": "https",
+      "ServiceName": "MicroServices",
+      "UpstreamPathTemplate": "/quote/",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}
